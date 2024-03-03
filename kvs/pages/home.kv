@@ -1,0 +1,22 @@
+<HomeScreen>
+    md_bg_color:app.bgcolor
+    MDBottomNavigation:
+        panel_color: "#eeeaea"
+        selected_color_background: app.my_theme_color
+        text_color_active: app.textcolor
+        font_name: "firabook"
+        MDBottomNavigationItem:
+            name: 'intro'
+            text: 'Home'
+            icon: 'home'
+            on_tab_press: print("on_tab_press")
+            
+            IntroScreen:
+
+        MDBottomNavigationItem:
+            name: 'detect'
+            text: 'Detect products'
+            icon: 'barcode'
+         
+            DetectScreen:
+        

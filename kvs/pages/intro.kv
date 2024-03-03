@@ -1,0 +1,139 @@
+<IntroScreen>
+    md_bg_color:app.bgcolor  
+    MDFloatLayout:
+        size_hint_y:1
+        MDCard:
+            size_hint_y: None
+            height:dp(45)
+            md_bg_color:app.my_theme_color  
+            pos_hint:{"top":1}
+            spacing:1
+            padding: dp(7)
+            elevation:1
+            radius: [0,0,10,10]
+            Image:
+                source:"assets/img/logo.png"
+                size_hint:None,None
+                size:30,30
+                pos_hint:{'center_x':.5,'center_y':.5}
+            MDLabel:
+                text:app.title
+                font_size:"20dp"
+                bold:True
+                pos_hint:{'center_y':.5}
+                halign:'center'
+                theme_text_color:"Custom"
+                text_color:"#ffffff"
+                font_name:"aff"
+        
+        MDBoxLayout:        
+            #size_hint_y:.8
+            adaptive_height:True
+            padding:dp(10)
+            spacing:8
+            orientation: 'vertical'
+            MDLabel:
+                id: label
+                text: "Hello there,"
+                adaptive_size: True
+                color:app.textcolor
+                pos_hint:{'center_x':.13}
+                bold: True
+                font_name:"firabold"
+            MDCard:
+                size_hint_y: None
+                height:dp(200)
+                md_bg_color:app.cardbg  
+                pos_hint:{"center_y":.58, "center_x":.5}
+                spacing:1
+                padding: dp(7)
+                elevation:1
+                radius: [10]
+                shadow_softness:1
+                shadow_offset:(0, 1)
+                orientation:'vertical'
+                MDLabel:
+                    id: label
+                    text: "Detect a fake product"
+                    adaptive_size: True
+                    color:app.textcolor
+                    pos: "12dp", "12dp"
+                    bold: True
+                    font_name:"firabold"
+                Widget:
+                    size_hint_y:None
+                    height:dp(10)
+                MDLabel:
+                    id: label
+                    text: f"Use this AI tool to detect counterfeit products with our pre-trained datasets "
+                    size_hint_y:root.height    
+                    adaptive_height:True
+                    font_size:'15dp'
+                    color:app.textcolor
+                    pos: "12dp", "12dp"
+                    font_name:"firaregular"
+                Widget:
+                    size_hint_y:None
+                    height:dp(20)
+                MDRaisedButton:
+                    text: "Start Detecting"
+                    md_bg_color: app.accent
+                    pos_hint:{'center_x':.5}
+                    font_name:"firaregular"
+                    on_release:app.change_screen("Detect")
+                Widget:
+                    size_hint_y:None
+                    height:dp(20)
+
+                    
+                
+            MDCard:
+                size_hint_y: None
+                height:dp(200)
+                md_bg_color:app.my_theme_color1  
+                pos_hint:{"center_y":.6, "center_x":.5}
+                spacing:1
+                padding: dp(7)
+                elevation:1
+                radius: [10]
+                shadow_softness:1
+                shadow_offset:(0, 1)
+                ripple_behavior: True
+                orientation:'vertical'
+                MDLabel:
+                    id: label
+                    text: "About this project!"
+                    adaptive_size: True
+                    color:app.textcolor
+                    pos: "12dp", "12dp"
+                    font_name:"firabold"
+                    bold: True
+                Widget:
+                    size_hint_y:None
+                    height:dp(10)
+                MDLabel:
+                    text: f"Prototype for AI innovation showcase project by tech titan group 1"
+                    size_hint_y:root.height    
+                    adaptive_height:True
+                    color:app.textcolor
+                    pos: "12dp", "12dp"
+                    font_name:"firaregular"
+                    font_size:"14dp"
+                Widget:
+                    size_hint_y:None
+                    height:dp(20)
+                MDLabel:   
+                    font_size:"14dp"
+                    text: f"Project Description - A fake product  \ndetection app"
+                    size_hint_y:root.height    
+                    adaptive_height:True
+                    color:app.textcolor
+                    pos: "12dp", "12dp"
+                    font_name:"firaregular"
+                Widget:
+                    size_hint_y:None
+                    height:dp(20)
+
+            Widget:
+                size_hint_y:None
+                height:dp(20)

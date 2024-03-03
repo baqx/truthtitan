@@ -1,0 +1,169 @@
+<ResultScreen>
+    md_bg_color:app.bgcolor  
+
+    ScrollView:
+        MDBoxLayout:
+            adaptive_height:True
+            #size_hint_y:.999
+            orientation:"vertical"
+            spacing:3
+            MDCard:
+                size_hint_y:None
+                height:dp(40)
+                pos_hint:{"top":1}
+                spacing:5
+                orientation:"horizontal"
+                md_bg_color:app.my_theme_color  
+                padding: dp(3)
+                elevation:1
+                radius: [0,0,10,10]
+                MDIconButton:
+                    icon:"chevron-left"
+                    theme_text_color:"Custom"
+                    color:app.my_theme_color
+                    pos_hint:{'center_x':.5,'center_y':.5}
+                    on_release:app.change_screen("Home")
+                MDLabel:
+                    text:"Detection Results"
+                    pos_hint:{'center_x':.5,'center_y':.5}
+                    font_name:"firabold"
+                    theme_text_color:"Custom"
+                    color:"#ffffff"
+            Widget:
+                size_hint_y:None
+                height:dp(1)
+            MDSmartTile:
+                id:spec
+                radius: 24
+                box_radius: [0, 0, 24, 24]
+                box_color: 0, 0, 1, .2
+                source:root.imgpath
+                pos_hint: {"center_x": .5}
+                size_hint_y:None  
+                height:dp(300)
+
+
+                MDIconButton:
+                    icon: "atom-variant"
+                    theme_icon_color: "Custom"
+                    icon_color: app.my_theme_color1
+                    pos_hint: {"center_y": .5}
+                MDLabel:
+                    text:root.product
+                    pos_hint: {"center_y": .5, "center_x":.3}
+
+
+            MDCard:
+                size_hint_y: None
+                adaptive_height:True
+                md_bg_color:app.cardbg
+                pos_hint:{"center_y":.6, "center_x":.5}
+                spacing:1
+                padding: dp(15)
+                #elevation:1
+                radius: [7]
+                shadow_softness:1
+                shadow_offset:(0, 1)
+                orientation:'vertical'
+                MDLabel:
+                    id: label
+                    text: "Cosine Similarity"
+                    adaptive_size: True
+                    color:app.textcolor
+                    pos: "12dp", "12dp"
+                    font_name:"firabold"
+                    bold: True
+                Widget:
+                    size_hint_y:None
+                    height:dp(15)
+                MDLabel:
+                    id: label
+                    text: f"This product and the original product has a cosine similarity of {root.csim} "
+                    size_hint_y:root.height    
+                    adaptive_height:True
+                    font_size:'13dp'
+                    color:app.textcolor
+                    pos: "12dp", "12dp"
+                    font_name:"firaregular"
+
+                Widget:
+                    size_hint_y:None
+                    height:dp(5)
+
+            MDCard:
+                size_hint_y: None
+                adaptive_height:True
+                md_bg_color:app.cardbg
+                pos_hint:{"center_y":.6, "center_x":.5}
+                spacing:1
+                padding: dp(15)
+                #elevation:1
+                radius: [7]
+                shadow_softness:1
+                shadow_offset:(0, 1)
+                orientation:'vertical'
+                MDLabel:
+                    id: label
+                    text: "Structural Similarity"
+                    adaptive_size: True
+                    color:app.textcolor
+                    pos: "12dp", "12dp"
+                    font_name:"firabold"
+                    bold: True
+                Widget:
+                    size_hint_y:None
+                    height:dp(15)
+                MDLabel:
+                    id: label
+                    text: f"This product and the original product has a suctural similarity of {root.ssim} "
+                    size_hint_y:root.height    
+                    adaptive_height:True
+                    font_size:'13dp'
+                    color:app.textcolor
+                    pos: "12dp", "12dp"
+                    font_name:"firaregular"
+
+                Widget:
+                    size_hint_y:None
+                    height:dp(10)
+
+            MDCard:
+                size_hint_y: None
+                height:dp(200)
+                md_bg_color:app.cardbg
+                pos_hint:{"center_x":.5}
+                spacing:1
+                padding: dp(15)
+                #elevation:1
+                radius: [7]
+                shadow_softness:1
+                shadow_offset:(0, 1)
+                orientation:'vertical'
+                MDLabel:
+                    id: label
+                    text: "Inference"
+                    adaptive_size: True
+                    color:app.textcolor
+                    pos: "12dp", "12dp"
+                    font_name:"firabold"
+                    bold: True
+                Widget:
+                    size_hint_y:None
+                    height:dp(15)
+                MDLabel:
+                    id: label
+                    text: f"{root.msg} Please note that you have to confirm other qualities such as material, taste(if edible)  e.t.c as this tool is to check if the products are counterfeit by similarity only."
+                    size_hint_y:root.height    
+                    adaptive_height:True
+                    font_size:'13dp'
+                    color:app.textcolor
+                    pos: "12dp", "12dp"
+                    font_name:"firaregular"
+    MDFloatingActionButton:
+        icon: "home"
+        md_bg_color: app.theme_cls.primary_color
+        pos_hint:{"center_x":.9, "center_y":.08}
+        on_release:app.change_screen("Home")
+
+
+               

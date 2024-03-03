@@ -112,6 +112,7 @@ class MainApp(MDApp):
             IntroScreen(name='Intro'),
             DetectScreen(name='Detect'),
             ResultScreen(name='Result'),
+            
 
 
         ]
